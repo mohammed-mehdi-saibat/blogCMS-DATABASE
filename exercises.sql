@@ -12,4 +12,21 @@ WHERE article_status = "draft" AND date_de_creation < "2024-01-01";
 DELETE FROM commentaire
 WHERE commentaire_status = "spam"
 AND commentaire_date < "2024-12-04";
+-- 5. WHERE - Filtrage temporel
+SELECT *
+FROM article
+WHERE article_status = 'published'
+AND date_de_creation > '2024-12-01';
+-- 6. ORDER BY - Tri chronologique
+SELECT *
+FROM utilisateur
+ORDER BY date_de_creation ASC;
+-- 7. LIMIT - Articles récents
+SELECT titre, date_de_creation
+FROM article
+ORDER BY date_de_creation DESC
+LIMIT 5;
+-- 8. DISTINCT - Rôles uniques
+SELECT DISTINCT utilisateur_role
+FROM utilisateur;
 
